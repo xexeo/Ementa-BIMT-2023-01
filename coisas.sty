@@ -1,0 +1,43 @@
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{fancyhdr}
+\RequirePackage{sectsty}
+
+
+
+
+
+\definecolor{pescorange}{RGB}{214,135,73}
+\definecolor{pescblue}{RGB}{0,52,90}
+
+
+\renewcommand\section{
+\@startsection{section}{1}{1.\z@}
+              {-3.5ex \@plus -1ex \@minus -.2ex}
+              {2.3ex \@plus .2ex}
+              {\color{pescorange}\sffamily\Large\bfseries}}
+
+\renewcommand\subsection{
+\@startsection{subsection}{2}{\z@}
+              {-3.25ex\@plus -1ex \@minus -.2ex}
+              {1.5ex \@plus .2ex}
+              {\color{pescorange!95}\sffamily\Large\bfseries}}
+\renewcommand\subsubsection{
+\@startsection{subsubsection}{3}{\z@}
+              {-3.25ex\@plus -1ex \@minus -.2ex}
+              {1.2ex \@plus .2ex}
+              {\color{pescorange!95}\sffamily\large\emph}}
+
+
+% Colocar logos no topo das páginas
+% Requires fancyhdr
+
+\addtolength{\headheight}{1.5cm} % make more space for the header
+\pagestyle{fancyplain} % use fancy for all pages except chapter start
+\lhead{\includegraphics[height=1.3cm]{logos/logo-line-modificado.png}} % left logo
+\rhead{\includegraphics[height=1.3cm]{logos/logoPESC_siglaHorizontal_cor.png}} % right logo
+\chead{\Large \sffamily\bfseries\color{pescblue} Ementa de Curso}
+   
+\renewcommand{\headrulewidth}{1pt}% 2pt header rule
+\renewcommand{\headrule}{\hbox to\headwidth{%
+  \color{pescblue}\leaders\hrule height \headrulewidth\hfill}}
+
